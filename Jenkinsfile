@@ -29,14 +29,15 @@ pipeline{
                         sh "docker tag springapp louaykharouf/spring-app:springapp"
                         sh "docker push louaykharouf/spring-app:springapp"
                          }          }
-                    }              
-                }
-                   stage("Test"){
+                    }   
+        stage("Test"){
             steps {                
                 script {
                     echo "======== executing ========"     
                         sh "mvn test"}     }
-                    }
+                    }           
+                }
+
             post{
                 success{
                     echo "======== Pipeline is done successfully ========"
