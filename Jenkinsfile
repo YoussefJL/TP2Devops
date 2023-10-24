@@ -26,8 +26,10 @@ pipeline{
                 script {
                     echo "======== executing ========"
                         echo "push to hub"
+                        withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                         sh "docker tag springapp youssefjouili33/spring-app:springapp"
                         sh "docker push youssefjouili33/spring-app:springapp"
+                        }
                          }          }
                     }   
         stage("Test"){
