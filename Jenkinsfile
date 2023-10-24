@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("getting code") {
             steps {
-                git url: 'https://github.com/Louaykharouf26/TP2Devops.git', branch: 'master',
+                git url: 'https://github.com/YoussefJL/TP2Devops.git', branch: 'master',
                 credentialsId: 'github-credentials' //jenkins-github-creds
                 sh "ls -ltr"   }
         } 
@@ -26,8 +26,8 @@ pipeline{
                 script {
                     echo "======== executing ========"
                         echo "push to hub"
-                        sh "docker tag springapp louaykharouf/spring-app:springapp"
-                        sh "docker push louaykharouf/spring-app:springapp"
+                        sh "docker tag springapp youssefjouili33/spring-app:springapp"
+                        sh "docker push youssefjouili33/spring-app:springapp"
                          }          }
                     }   
         stage("Test"){
